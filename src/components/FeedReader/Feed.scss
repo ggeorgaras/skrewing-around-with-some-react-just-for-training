@@ -1,0 +1,38 @@
+.single {
+  margin: 0 auto 2rem;
+  float: none!important;
+}
+
+.single__header {
+  margin: 0 0 2rem;
+  padding: 0 2rem;
+}
+
+.single__title {
+  font-weight: 900;
+}
+
+.single__image-blk {
+  margin: 0 0 3rem;
+}
+
+.single__image {
+  max-width: 100%;
+  min-width: 100%;
+  margin: 0;
+}
+
+.single__introtext {
+  font-weight: 700;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  padding: 0 3rem;
+  font-size: 1.5rem;
+}
+
+.single__fulltext {
+  font-weight: 300;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  padding: 0 3rem;
+}
