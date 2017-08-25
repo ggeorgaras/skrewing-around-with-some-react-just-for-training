@@ -28,6 +28,8 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
+    "mobx": "^3.2.2",
+    "mobx-react": "^4.2.2",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.6",
@@ -97,6 +99,9 @@
     ]
   },
   "babel": {
+    "plugins": [
+      "transform-decorators-legacy"
+    ],
     "presets": [
       "react-app"
     ]
