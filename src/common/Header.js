@@ -15,6 +15,9 @@ const Header = () => (
                     <li>
                         <Link to="/filter">Filtering</Link>
                     </li>
+                    <li>
+                        <Link to="/live-editor">Live Editor</Link>
+                    </li>
                 </ul>
             </nav>
         </div>

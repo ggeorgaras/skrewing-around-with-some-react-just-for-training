@@ -4,7 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 // Import the much needed components
 import FilterableProductTable from './Filter/Filter';
 import FeedReader from './FeedReader/Feedreader';
-import Home from './Home';
+import Editor from './LiveEditor/liveEditor';
+import Home from './Home'
 // // The transitions
 //import TransitionGroup from "react-transition-group/TransitionGroup";
 
@@ -43,6 +44,15 @@ const Main = () => (
                     <Route
                         path='/feed-reader'
                         component={FeedReader}
+                        // children={({ match, ...rest }) => (
+                        //     <TransitionGroup component={firstChild}>
+                        //         {match && <FeedReader {...rest} />}
+                        //     </TransitionGroup>
+                        // )}
+                    />
+                    <Route
+                        path='/live-editor'
+                        component={Editor}
                         // children={({ match, ...rest }) => (
                         //     <TransitionGroup component={firstChild}>
                         //         {match && <FeedReader {...rest} />}
