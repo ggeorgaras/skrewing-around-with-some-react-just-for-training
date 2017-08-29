@@ -18,11 +18,17 @@ import InputModel from './Models/Inputbox.js'
 // }
 
 /* Computed methods */
-class TitleAlias extends React.Component {
+const inputModel = new InputModel();
+
+@observer
+class TitleAlias ex tends React.Component {
+
+    @observable alias = inputModel.calcTitle;
+
     render() {
         // Build the URL
        // const alias = this.alias;
-        const safeURL =  encodeURIComponent(this.props.alias);
+        let safeURL =  encodeURIComponent(this.alias);
         return (
             <div className="title-alias">
                 <code>
@@ -39,6 +45,8 @@ class TitleAlias extends React.Component {
 @observer
 class Editor extends React.Component{
 
+    @observable alias = inputModel.calcTitle;
+
     constructor(props) {
         super(props);
 
@@ -47,31 +55,28 @@ class Editor extends React.Component{
    }
 
     // Needed for the changing of the input's value
-    updateProperty (key, value) {
-        //this.props.value = value
-        //this.props.data[key] = value;
-        // console.log(value);
-        // console.log(this.props);
-    }
-
-    @computed get buildAlias() {
-        console.log('e');
+    @action
+    updateProperty = (e) => {
+        console.log('updateProperty')
+        console.log( 'it is ' + e +  inputModel.calcTitle )
+        //console.log(key + ' ' + value)
     }
 
     render() {
         const data = this.props;
-
-        return (
+       return (
             <div className="single">
                 <div className={`col-md-6 ${styles['single__editor']}`} >
-                    <form action="">
-                        <InputModel type="text" id="title" value={data.title} name="title" />
-                        <TitleAlias alias={InputModel.value} />
+                    <form action="" onChange={this.updateProperty}>
+                        <InputModel type="text" id="title" value={data.title} name="title"  />
+                        <TitleAlias alias={inputModel.calcTitle} />
                         <TextInput text="" />
                         <VideoInput id={data.id} />
+                        {inputModel.calcTitle}
                     </form>
                 </div>
                 <div className={`col-md-6 ${styles['single__preview']}`}>
+                    <h1>{inputModel.calcTitle} =</h1>
                 </div>
             </div>
         )

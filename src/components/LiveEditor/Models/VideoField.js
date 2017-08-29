@@ -20,7 +20,7 @@ class VideoInput extends React.Component {
                 <label htmlFor="video-input">
                     Enter YT ID
                 </label>
-                <textarea name="video-input" className="form-control" id="video-input" onChange={this.handleChange} defaultValue={this.input} />
+                <textarea name="video-input" className="form-control" id="video-input" onChange={this.handleChange} defaultValue={this.input} value={this.input} />
 
                 <div className="col-md-12">
                     <div className="video-preview">
@@ -38,7 +38,7 @@ class VideoInput extends React.Component {
 }
 
 VideoInput.propTypes = {
-    handleChange: PropTypes.func.isRequired
+   // handleChange: PropTypes.func.isRequired
 }
 
 VideoInput.defaultProps = {
