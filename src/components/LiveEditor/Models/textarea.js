@@ -1,10 +1,11 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
 import { observable, action } from 'mobx';
-import { autorun }  from 'mobx';
 import { observer } from 'mobx-react';
-import styles from '../liveEditor.scss';
 
+/**
+ * The class that generated the textarea elements
+ */
 @observer
 class TextInput extends React.Component {
 
@@ -15,23 +16,37 @@ class TextInput extends React.Component {
 
     @observable input = '';
 
-    render() {
-        return (
-            <div className="form-group">
-                <label htmlFor="textarea">Enter full text</label>
-                <textarea name="text" id="textarea" className="form-control" onChange={this.onChange} defaultValue={this.input} value={this.input} />
-            </div>
-        )
+    // Update the input on the change event
+    @action
+    onChange = (event) => {
+        this.input = event.target.value;
     }
 
-    @action onChange = (event) => {
-        this.input = event.target.value;
+
+    render() {
+        const input = this.props
+
+        return (
+            <div className="form-group">
+                <label htmlFor="textarea">
+                    {input.label}
+                </label>
+                <textarea
+                    name={input.name}
+                    id={input.id}
+                    className="form-control"
+                    onChange={this.onChange}
+                    defaultValue={this.input}
+                />
+            </div>
+        )
     }
 }
 
 TextInput.propTypes = {
-    //onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func,
+    name: PropTypes.string,
+    id: PropTypes.string,
 }
-
 
 export default TextInput

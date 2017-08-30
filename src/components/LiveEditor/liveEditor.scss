@@ -1,0 +1,35 @@
+.single {
+  padding: 2em 0 3em;
+}
+
+.single__preview {
+
+}
+
+.single__title {
+  font-weight: 800;
+  margin-bottom: 0.5em;
+}
+
+.single__introtext {
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.single__fulltext {
+  margin-bottom: 1em;
+}
+
+.single__video {
+  margin-bottom: 1em;
+  position: relative;
+  padding-bottom: 56%;
+
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+}

@@ -1,8 +1,7 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
-import { observable, action, autorun, computed } from 'mobx';
+import { observable, action  } from 'mobx';
 import { observer } from 'mobx-react';
-import styles from '../liveEditor.scss';
 
 @observer
 class InputModel extends React.Component {
@@ -20,23 +19,25 @@ class InputModel extends React.Component {
         //this.props.onChange(event.target.name, event.target.value)
         this.input = event.target.value;
 
+        // Deprecated
         // invoke the calculation of the title
-        this.calcTitle
-        console.log('on Change')
+        //this.calcTitle
     }
 
-    @computed
-    get calcTitle() {
-        console.log('Calculating title')
-        return this.input
-    }
+    // Not needed anympre
+    // @computed
+    // get calcTitle() {
+    //     return this.input
+    // }
 
     render() {
         // Shorthand
         const input = this.props
         return (
             <div className="form-group">
-                <label htmlFor={input.id}>Enter Title</label>
+                <label htmlFor={input.id}>
+                    {input.label}
+                </label>
                 <input
                     type={input.type}
                     value={this.input}
@@ -51,7 +52,11 @@ class InputModel extends React.Component {
 }
 
 InputModel.propTypes = {
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    label: PropTypes.string,
+    value: PropTypes.string,
+    name: PropTypes.string,
+    id: PropTypes.string,
 }
 
 InputModel.defaultProps = {

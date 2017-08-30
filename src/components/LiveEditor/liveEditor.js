@@ -1,36 +1,26 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
-import { observable, computed, autorun, action } from 'mobx';
+import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
 import styles from './liveEditor.scss';
 
-import VideoInput from './Models/VideoField.js'
 import TextInput from './Models/Textarea.js'
 import InputModel from './Models/Inputbox.js'
 
-/* Observable methods - data inputs */
-// const TitleInput = (props) => {
-//     return (
-//         <div className="form-group">
-//             <input value={props.title} name="title" id="title" />
-//         </div>
-//     )
-// }
-
-/* Computed methods */
-const inputModel = new InputModel();
-
-@observer
+//@observer
 class TitleAlias extends React.Component {
-
-    @observable alias = inputModel.calcTitle;
 
     render() {
         // Build the URL
        // const alias = this.alias;
-        let safeURL =  encodeURIComponent(this.alias);
+        let safeURL = encodeURIComponent(this.props.alias);
+
         return (
-            <div className="title-alias">
+            <div className="title-alias form-group">
+                <label>
+                    Alias (auto generated)
+                </label>
+                <br />
                 <code>
                     {safeURL}
                 </code>
@@ -39,44 +29,120 @@ class TitleAlias extends React.Component {
     }
 }
 
+TitleAlias.propTypes = {
+    alias: PropTypes.string.isRequired,
+}
+
+TitleAlias.defaultProps = {
+    alias: 'start-typing',
+}
+
 /**
  * Build the entire Editor compoent
  */
 @observer
 class Editor extends React.Component{
 
-    @observable alias = inputModel.calcTitle;
+    // Observable Values
+    // Will be rendered in the live editor
+    @observable alias;
+    @observable introtext;
+    @observable fulltext;
+    @observable videoid = '';
 
     constructor(props) {
         super(props);
 
         // Bind the methods to the component
-        this.updateProperty = this.updateProperty.bind(this)
+        this.updateTitleProperty = this.updateTitleProperty.bind(this)
    }
 
-    // Needed for the changing of the input's value
+    // Invoked on the form's change
     @action
-    updateProperty = (e) => {
-        console.log('updateProperty')
-        console.log( 'it is ' + e +  inputModel.calcTitle )
-        //console.log(key + ' ' + value)
+    updateTitleProperty = (e) => {
+        // Depending on the input's name update the according @observable value
+        switch(e.target.name) {
+            case 'title' :
+                this.alias =  e.target.value
+                break;
+            case 'introtext' :
+                this.introtext =   e.target.value
+                break;
+            case 'fulltext' :
+                this.fulltext =   e.target.value
+                break;
+            case 'videoid' :
+                this.videoid =   e.target.value
+                break;
+            default :
+                break;
+        }
     }
 
     render() {
-        const data = this.props;
        return (
-            <div className="single">
+            <div className={`row ${styles['single']}`}>
                 <div className={`col-md-6 ${styles['single__editor']}`} >
-                    <form action="" onChange={this.updateProperty}>
-                        <InputModel type="text" id="title" value={data.title} name="title"  />
-                        <TitleAlias alias={inputModel.calcTitle} />
-                        <TextInput text="" />
-                        <VideoInput id={data.id} />
-                        {inputModel.calcTitle}
+                    <form action="" onChange={this.updateTitleProperty}>
+                        <InputModel
+                            type="text"
+                            id="title"
+                            value={this.alias}
+                            name="title"
+                            label="Title"
+                        />
+
+                        <TitleAlias alias={this.alias} />
+
+                        <TextInput
+                            name="introtext"
+                            id="introtext"
+                            label="Intro Text"
+                            text=""
+                        />
+
+                        <TextInput
+                            name="fulltext"
+                            id="fulltext"
+                            label="Full Text"
+                            text=""
+                        />
+
+                        {/* <VideoInput id={data.id} /> */}
+
+                        <InputModel
+                            type="text"
+                            id="videoid"
+                            value={this.videoid}
+                            name="videoid"
+                            label="YouTube Video ID"
+                        />
+
                     </form>
                 </div>
+
                 <div className={`col-md-6 ${styles['single__preview']}`}>
-                    <h1>{inputModel.calcTitle} =</h1>
+                    <h1 className={styles['single__title']}>
+                        {this.alias}
+                    </h1>
+                    <div className={styles['single__body']}>
+
+                        <div className={styles['single__introtext']}
+                             dangerouslySetInnerHTML={{
+                                 __html: this.introtext
+                             }} />
+
+                        <div className={styles['single__fulltext']}
+                            dangerouslySetInnerHTML={{
+                            __html: this.fulltext
+                        }} />
+                    </div>
+
+                    {this.videoid !== '' &&
+                    <div className={styles['single__video']}>
+                        <iframe src={`https://www.youtube.com/embed/${this.videoid}`}/>
+                    </div>
+                    }
                 </div>
             </div>
         )
