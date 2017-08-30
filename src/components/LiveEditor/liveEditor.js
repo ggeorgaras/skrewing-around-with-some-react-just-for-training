@@ -21,7 +21,7 @@ import InputModel from './Models/Inputbox.js'
 const inputModel = new InputModel();
 
 @observer
-class TitleAlias ex tends React.Component {
+class TitleAlias extends React.Component {
 
     @observable alias = inputModel.calcTitle;
 
