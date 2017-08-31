@@ -80,15 +80,6 @@ class Editor extends React.Component{
         this.updateTitleProperty = this.updateTitleProperty.bind(this)
    }
 
-    // Manipulate the tags object
-   // @computed
-   // get displayTags() {
-    //     Object.keys(this.tagsArray).map((key) => {
-    //           this.taglist += <li>{this.tagsArray[key].value}</li>
-    //     })
-    //     return this.taglist
-    // }
-
     // Invoked on the form's change
     @action
     updateTitleProperty = (e) => {
