@@ -9,6 +9,8 @@ import InputModel from './Models/Inputbox.js'
 import Option from './Models/Option.js'
 import SelectModel from './Models/Select.js'
 
+import DevTools from 'mobx-react-devtools';
+
 // Importing our demo data
 import Categories from './Data/Categories.js'
 import Tags from './Data/Tags.js'
@@ -78,7 +80,14 @@ class Editor extends React.Component{
 
         // Bind the methods to the component
         this.updateTitleProperty = this.updateTitleProperty.bind(this)
-   }
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    // invoked on the form's submit
+    handleSubmit(event) {
+        event.preventDefault();
+        console.log(this);
+    }
 
     // Invoked on the form's change
     @action
@@ -115,6 +124,12 @@ class Editor extends React.Component{
         }
     }
 
+    @computed
+    get TitleAlias() {
+        let titlealias = encodeURIComponent(this.title);
+        return titlealias
+    }
+
     render() {
         /*
          * Build the taxonomies list
@@ -140,7 +155,11 @@ class Editor extends React.Component{
         return (
             <div className={`row ${styles['single']}`}>
                 <div className={`col-md-6 ${styles['single__editor']}`} >
-                    <form action="" onChange={this.updateTitleProperty}>
+                    <form
+                        //action=""
+                        onSubmit={this.handleSubmit}
+                        onChange={this.updateTitleProperty}>
+
                         <InputModel
                             type="text"
                             id="title"
@@ -198,6 +217,9 @@ class Editor extends React.Component{
                             label="YouTube Video ID"
                         />
 
+                        <div className="form-group">
+                            <input type="submit" value="Submit" className="button btn bnt-lg btn-success" />
+                        </div>
                     </form>
                 </div>
 
@@ -235,8 +257,8 @@ class Editor extends React.Component{
                     </div>
                     }
                 </div>
+                <DevTools />
             </div>
-
         )
     }
 }

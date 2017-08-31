@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a835fc5-2206-4284-991b-d113719c9f99" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/LiveEditor/Data/Categories.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/LiveEditor/Data/Tags.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/LiveEditor/Models/Option.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/LiveEditor/Models/Select.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/LiveEditor/Models/textarea.js" afterPath="$PROJECT_DIR$/src/components/LiveEditor/Models/textarea.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/LiveEditor/liveEditor.js" afterPath="$PROJECT_DIR$/src/components/LiveEditor/liveEditor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/LiveEditor/liveEditor.scss" afterPath="$PROJECT_DIR$/src/components/LiveEditor/liveEditor.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -70,12 +64,12 @@
       <file leaf-file-name="liveEditor.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/LiveEditor/liveEditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3059">
-              <caret line="226" column="0" lean-forward="true" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="258" column="22" lean-forward="true" selection-start-line="258" selection-start-column="22" selection-end-line="258" selection-end-column="22" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
-                <element signature="e#401#446#0" expanded="true" />
-                <element signature="e#512#548#0" expanded="true" />
+                <element signature="e#446#491#0" expanded="true" />
+                <element signature="e#557#593#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,7 +80,20 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="15" column="43" lean-forward="false" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-              <folding />
+              <folding>
+                <marker date="1504181130897" expanded="true" signature="1883:2125" ph="{&quot;css-loader&quot;: &quot;^0.28.4&quot;...}" />
+                <marker date="1504181130897" expanded="true" signature="2137:2972" ph="{&quot;testEnvironment&quot;: &quot;node&quot;...}" />
+                <marker date="1504181130897" expanded="true" signature="2166:2199" ph="[...]" />
+                <marker date="1504181130897" expanded="true" signature="2219:2264" ph="[...]" />
+                <marker date="1504181130897" expanded="true" signature="2283:2387" ph="[...]" />
+                <marker date="1504181130897" expanded="true" signature="2472:2681" ph="{&quot;^.+\.(js|jsx)$&quot;: &quot;&lt;rootDir&gt;/node_modules/babel-jest&quot;...}" />
+                <marker date="1504181130897" expanded="true" signature="2714:2770" ph="[...]" />
+                <marker date="1504181130897" expanded="true" signature="2796:2846" ph="{&quot;^react-native$&quot;: &quot;react-native-web&quot;...}" />
+                <marker date="1504181130897" expanded="true" signature="2876:2968" ph="[...]" />
+                <marker date="1504181130897" expanded="true" signature="2985:3091" ph="{...}" />
+                <marker date="1504181130897" expanded="true" signature="3002:3045" ph="[...]" />
+                <marker date="1504181130897" expanded="true" signature="3062:3087" ph="[...]" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -600,7 +607,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159963000" />
+    <option name="totallyTimeSpent" value="161569000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -621,7 +628,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24982794" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41244724" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.306962" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -923,7 +930,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" column="43" lean-forward="false" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-          <folding />
+          <folding>
+            <marker date="1504181130897" expanded="true" signature="1883:2125" ph="{&quot;css-loader&quot;: &quot;^0.28.4&quot;...}" />
+            <marker date="1504181130897" expanded="true" signature="2137:2972" ph="{&quot;testEnvironment&quot;: &quot;node&quot;...}" />
+            <marker date="1504181130897" expanded="true" signature="2166:2199" ph="[...]" />
+            <marker date="1504181130897" expanded="true" signature="2219:2264" ph="[...]" />
+            <marker date="1504181130897" expanded="true" signature="2283:2387" ph="[...]" />
+            <marker date="1504181130897" expanded="true" signature="2472:2681" ph="{&quot;^.+\.(js|jsx)$&quot;: &quot;&lt;rootDir&gt;/node_modules/babel-jest&quot;...}" />
+            <marker date="1504181130897" expanded="true" signature="2714:2770" ph="[...]" />
+            <marker date="1504181130897" expanded="true" signature="2796:2846" ph="{&quot;^react-native$&quot;: &quot;react-native-web&quot;...}" />
+            <marker date="1504181130897" expanded="true" signature="2876:2968" ph="[...]" />
+            <marker date="1504181130897" expanded="true" signature="2985:3091" ph="{...}" />
+            <marker date="1504181130897" expanded="true" signature="3002:3045" ph="[...]" />
+            <marker date="1504181130897" expanded="true" signature="3062:3087" ph="[...]" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -955,12 +975,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/LiveEditor/liveEditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3059">
-          <caret line="226" column="0" lean-forward="true" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+        <state relative-caret-position="306">
+          <caret line="258" column="22" lean-forward="true" selection-start-line="258" selection-start-column="22" selection-end-line="258" selection-end-column="22" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
-            <element signature="e#401#446#0" expanded="true" />
-            <element signature="e#512#548#0" expanded="true" />
+            <element signature="e#446#491#0" expanded="true" />
+            <element signature="e#557#593#0" expanded="true" />
           </folding>
         </state>
       </provider>
