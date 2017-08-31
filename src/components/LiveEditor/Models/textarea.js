@@ -37,6 +37,7 @@ class TextInput extends React.Component {
                     className="form-control"
                     onChange={this.onChange}
                     defaultValue={this.input}
+                    rows={input.rows}
                 />
             </div>
         )
@@ -47,6 +48,11 @@ TextInput.propTypes = {
     onChange: PropTypes.func,
     name: PropTypes.string,
     id: PropTypes.string,
+    rows: PropTypes.number
+}
+
+TextInput.defaultProps = {
+    rows: 5
 }
 
 export default TextInput
