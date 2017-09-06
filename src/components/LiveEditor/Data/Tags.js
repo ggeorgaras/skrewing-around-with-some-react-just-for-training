@@ -1,5 +1,5 @@
 import React  from 'react';
-import { observable } from 'mobx';
+import { observable, computed } from 'mobx';
 
 class Tags extends React.Component {
 
@@ -15,6 +15,11 @@ class Tags extends React.Component {
             name: 'Demo Tags'
         }
     ]
+
+    @computed
+    get totalTags() {
+        return console.log('There are ' + this.tax.length + ' tags present')
+    }
 
 }
 

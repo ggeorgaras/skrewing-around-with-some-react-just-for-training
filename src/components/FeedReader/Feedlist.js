@@ -65,22 +65,6 @@ Statictext.defaultProps = {
  *
  */
 
-// Stateless component
-// Written as a class
-
-// class Single extends React.Component {
-//   render() {
-//     return (
-//       <div className="text-left col-md-4">
-//         <h2 className="single-title">
-//           {this.props.title}
-//         </h2>
-//         <div className="single-text" dangerouslySetInnerHTML={{ __html : this.props.text }} />
-//       </div>
-//     );
-//   }
-// }
-
 // Stateless componentq
 // Written as a shorthand ES6 arrow function - 50% reduction
 const Single = ({title, text, alias}) => (

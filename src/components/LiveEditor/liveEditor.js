@@ -1,6 +1,6 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
-import { observable, action, computed } from 'mobx';
+import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
 import styles from './liveEditor.scss';
 
@@ -19,8 +19,7 @@ import Tags from './Data/Tags.js'
 import Remarkable from 'remarkable';
 import RemarkableReactRenderer from 'remarkable-react';
 
-
-// Import our dummy data
+// Import our dummy data for our taxonomies
 const tags = new Tags()
 const categories = new Categories()
 
@@ -70,23 +69,35 @@ class Editor extends React.Component{
     @observable videoid = '';
     @observable category = '';
     @observable tags = '';
+    @observable newtag = '';
 
     // The
     tagsArray = [];
-    taglist = '';
 
     constructor(props) {
         super(props);
 
         // Bind the methods to the component
         this.updateTitleProperty = this.updateTitleProperty.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.addTag       = this.addTag.bind(this)
     }
 
     // invoked on the form's submit
     handleSubmit(event) {
         event.preventDefault();
         console.log(this);
+    }
+
+    @action
+    addTag = (event) => {
+        // Do not submit the form
+        event.preventDefault();
+
+        let toPush = { 'name': this.newtag };
+        tags.tax.push(toPush)
+        this.newtag = ''
+        console.log(this.newtag)
     }
 
     // Invoked on the form's change
@@ -119,18 +130,15 @@ class Editor extends React.Component{
                     )
                 })
                 break;
+            case 'addTag' :
+                this.newtag = e.target.value
+                break;
             default :
                 break;
         }
     }
 
-    @computed
-    get TitleAlias() {
-        let titlealias = encodeURIComponent(this.title);
-        return titlealias
-    }
-
-    render() {
+   render() {
         /*
          * Build the taxonomies list
          * See the demo data for the format
@@ -151,6 +159,9 @@ class Editor extends React.Component{
         var markdown      = new Remarkable();
         markdown.renderer = new RemarkableReactRenderer();
         markdown          = markdown.render(this.fulltext);
+
+        // tags.totalTags
+        // console.log(tags.tax)
 
         return (
             <div className={`row ${styles['single']}`}>
@@ -193,6 +204,18 @@ class Editor extends React.Component{
                             <option value="" disabled={true}>Select some tags</option>
                             {tagsToPrint}
                         </SelectModel>
+
+                        <InputModel
+                            type="text"
+                            id="addTag"
+                            value={this.toPush}
+                            name="addTag"
+                            label="Add a new tag"
+                        />
+
+                        <div className="form-group">
+                            <button onClick={this.addTag} className="button btn bnt-lg">Add a new tag to the list</button>
+                        </div>
 
                         <TextInput
                             name="introtext"
@@ -238,9 +261,7 @@ class Editor extends React.Component{
                         }}
                     />
 
-
                     <div className={styles['single__body']}>
-
                         <div className={styles['single__introtext']}
                              dangerouslySetInnerHTML={{
                                  __html: this.introtext
